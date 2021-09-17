@@ -1,5 +1,6 @@
 import 'package:crud/src/models/user.dart';
 import 'package:crud/src/network/api.dart';
+import 'package:crud/src/post.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 
@@ -39,14 +40,13 @@ class HomeWidgetState extends State<Home> {
         title: const Text('Flutter Crud Operations'),
         actions: <Widget>[
           IconButton(
-            icon: const Icon(Icons.add_alert),
+            icon: const Icon(Icons.add_outlined),
             tooltip: 'Notification',
             onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Coming soon')));
+              PostApiWidget().launch(context);
             },
           ),
-          ],
+        ],
       ),
       body: Container(
         child: NotificationListener(
@@ -88,7 +88,7 @@ class HomeWidgetState extends State<Home> {
                           padding: EdgeInsets.all(8),
                           decoration: boxDecorationWithRoundedCorners(
                               boxShadow: defaultBoxShadow(),
-                              backgroundColor: Colors.amberAccent),
+                              backgroundColor: Colors.orangeAccent),
                           margin: EdgeInsets.all(8),
                           child: Row(
                             children: [
